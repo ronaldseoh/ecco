@@ -64,6 +64,13 @@ bert-large-uncased:
         - '\d+\.output\.dense'
     token_prefix: ''
     partial_token_prefix: '##'
+'quartermaster':
+    embedding: "embeddings.word_embeddings"
+    type: 'mlm'
+    activations:
+        - '\d+\.output\.dense' #To set apart from attention.output.dense
+    token_prefix: ''
+    partial_token_prefix: '##'
 # ALBERT
 albert-base-v2:
     embedding: "embeddings.word_embeddings"
