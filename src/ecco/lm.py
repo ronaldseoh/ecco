@@ -437,7 +437,7 @@ class LM(object):
 
         # model
         if self.model_type == 'mlm':
-            output = self.model(**input_tokens, return_dict=True)
+            output = self.model(**input_tokens, output_hidden_states=True, output_attentions=True, return_dict=True)
             lm_head = None
         elif self.model_type == 'causal':
             output = self.model(**input_tokens, return_dict=True, use_cache=False)
